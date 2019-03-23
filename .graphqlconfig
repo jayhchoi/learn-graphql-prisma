@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "prisma": {
+      "schemaPath": "src/generated/prisma.graphql",
+      "extensions": {
+        "prisma": "prisma/prisma.yml",
+        "endpoints": {
+          "dev": "https://graphql-prisma-e82fb876c6.herokuapp.com/prisma/dev"
+        }
+      }
+    }
+  }
+}
