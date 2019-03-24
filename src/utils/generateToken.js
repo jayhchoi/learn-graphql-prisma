@@ -1,8 +1,7 @@
 import jwt from 'jsonwebtoken'
-import { MY_SECRET } from '../config/keys'
 
 const generateToken = userId => {
-  return jwt.sign({ userId }, MY_SECRET, { expiresIn: '10h' })
+  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '10h' })
 }
 
 export default generateToken

@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken'
 
-import { MY_SECRET } from '../config/keys'
-
 const getUserId = (request, requireAuth = true) => {
   // Get http authorization header
   const header = request.request
@@ -16,7 +14,7 @@ const getUserId = (request, requireAuth = true) => {
 
   // Verify token
   const token = header.replace('Bearer ', '')
-  const decoded = jwt.verify(token, MY_SECRET) // This verifies AND THEN decodes
+  const decoded = jwt.verify(token, process.env.JWT_SECRET) // This verifies AND THEN decodes
 
   return decoded.userId
 }
